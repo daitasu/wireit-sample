@@ -1,0 +1,41 @@
+{
+  "name": "wireit-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "manybuild": "wireit",
+    "build:aaa": "wireit",
+    "build:bbb": "wireit",
+    "build:ccc": "wireit",
+    "build:ddd": "wireit"
+  },
+  "wireit": {
+    "manybuild": {
+      "command": "echo 依存関係を終えると実行されるよ！",
+      "dependencies": [
+        "build:aaa",
+        "build:bbb",
+        "build:ccc",
+        "build:ddd"
+      ]
+    },
+    "build:aaa": {
+      "command": "echo Aをbuildしたよ！"
+    },
+    "build:bbb": {
+      "command": "echo Bをbuildしたよ！"
+    },
+    "build:ccc": {
+      "command": "echo Cをbuildしたよ！"
+    },
+    "build:ddd": {
+      "command": "echo Dをbuildしたよ！"
+    }
+  },
+  "author": "daitasu",
+  "license": "MIT",
+  "devDependencies": {
+    "wireit": "^0.8.0"
+  }
+}
